@@ -1,0 +1,8 @@
+.DS_Store
+assets/previews/
+assets/*original*.MOV
+assets/*original*.mov
+assets/htb-broadcast-original.MOV
+assets/sancha-original.MOV
+assets/kombu-fishing-original.mov
+tools/

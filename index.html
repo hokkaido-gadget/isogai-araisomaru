@@ -1,0 +1,1205 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>荒磯丸 あらいそまる | 日高昆布豚まん</title>
+  <meta name="description" content="北海道・新ひだか町の昆布屋、磯貝嘉市商店が届ける日高昆布豚まん「あらいそまる」。海の旨みを包んだご当地豚まんを公式通販でどうぞ。">
+  <style>
+    :root {
+      --ink: #182017;
+      --muted: #62705f;
+      --paper: #fff9ee;
+      --sand: #ffecc8;
+      --sea: #0f695f;
+      --sea-deep: #083d45;
+      --kelp: #394a22;
+      --gold: #f4b942;
+      --red: #d84a2b;
+      --pink: #ee7aa5;
+      --sky: #60b7c8;
+      --line: rgba(24, 32, 23, .13);
+      --shadow: 0 18px 42px rgba(111, 63, 12, .15);
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(180deg, rgba(255, 236, 200, .55), rgba(255, 249, 238, 0) 420px),
+        var(--paper);
+      font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "YuGothic", Meiryo, system-ui, sans-serif;
+      line-height: 1.75;
+    }
+
+    a { color: inherit; }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    figure {
+      margin: 0;
+    }
+
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 16px clamp(18px, 4vw, 56px);
+      color: #fff;
+      background: linear-gradient(180deg, rgba(74, 41, 12, .72), rgba(74, 41, 12, 0));
+    }
+
+    .brand {
+      display: grid;
+      gap: 2px;
+      font-weight: 800;
+      letter-spacing: 0;
+      line-height: 1.2;
+    }
+
+    .brand small {
+      font-size: 12px;
+      font-weight: 700;
+      opacity: .86;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .nav a {
+      text-decoration: none;
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .12);
+      backdrop-filter: blur(12px);
+    }
+
+    .hero {
+      min-height: 86vh;
+      position: relative;
+      display: grid;
+      align-items: end;
+      overflow: hidden;
+      color: #fff;
+      background: #092f37;
+      padding: 0;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(36, 20, 8, .9), rgba(36, 20, 8, .48) 46%, rgba(36, 20, 8, .12)),
+        linear-gradient(180deg, rgba(36, 20, 8, .06), rgba(36, 20, 8, .82)),
+        url("assets/hero-sea.jpg") center / cover;
+      transform: scale(1.04);
+      animation: slowPan 18s ease-in-out infinite alternate;
+    }
+
+    @keyframes slowPan {
+      from { transform: scale(1.04) translateX(-1%); }
+      to { transform: scale(1.09) translateX(1.5%); }
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      width: min(1180px, calc(100% - 36px));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(320px, .75fr);
+      gap: clamp(28px, 6vw, 72px);
+      align-items: end;
+      padding: 112px 0 42px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 12px;
+      border: 1px solid rgba(255, 255, 255, .34);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .12);
+      font-size: 13px;
+      font-weight: 800;
+      backdrop-filter: blur(16px);
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--gold);
+      box-shadow: 0 0 0 5px rgba(200, 144, 57, .24);
+    }
+
+    h1 {
+      margin: 22px 0 18px;
+      max-width: 760px;
+      font-size: clamp(44px, 8vw, 98px);
+      line-height: .98;
+      letter-spacing: 0;
+      text-wrap: balance;
+    }
+
+    .lead {
+      max-width: 680px;
+      margin: 0;
+      font-size: clamp(17px, 2.2vw, 23px);
+      color: rgba(255, 255, 255, .88);
+      font-weight: 700;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 900;
+      text-decoration: none;
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+    }
+
+    .button:hover { transform: translateY(-2px); }
+
+    .button.primary {
+      color: #fff;
+      background: var(--red);
+      box-shadow: 0 14px 34px rgba(216, 74, 43, .34);
+    }
+
+    .button.secondary {
+      color: #fff;
+      border-color: rgba(255, 255, 255, .44);
+      background: rgba(255, 255, 255, .12);
+      backdrop-filter: blur(14px);
+    }
+
+    .button.outline {
+      color: var(--sea-deep);
+      border-color: rgba(8, 61, 69, .28);
+      background: rgba(255, 255, 255, .7);
+    }
+
+    .video-panel {
+      position: relative;
+      border: 1px solid rgba(255, 255, 255, .24);
+      border-radius: 8px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, .1);
+      box-shadow: 0 28px 80px rgba(0, 0, 0, .36);
+      backdrop-filter: blur(18px);
+    }
+
+    .video-stage {
+      position: relative;
+      aspect-ratio: 4 / 4.35;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(9, 47, 55, .12), rgba(9, 47, 55, .78)),
+        url("assets/araisomaru-hero.jpeg") center / cover;
+    }
+
+    .video-stage video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+
+    .video-stage::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background: linear-gradient(180deg, rgba(4, 25, 28, .08), rgba(4, 25, 28, .54));
+    }
+
+    .video-badge {
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
+      z-index: 2;
+      display: grid;
+      gap: 3px;
+      color: #fff;
+      text-shadow: 0 2px 16px rgba(0, 0, 0, .56);
+    }
+
+    .video-badge strong {
+      font-size: clamp(18px, 2.2vw, 27px);
+      line-height: 1.25;
+    }
+
+    .video-badge span {
+      font-size: 12px;
+      font-weight: 900;
+      color: rgba(255, 255, 255, .82);
+    }
+
+    .video-caption {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 14px 16px;
+      font-size: 13px;
+      font-weight: 800;
+      color: rgba(255, 255, 255, .9);
+    }
+
+    .video-note {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      z-index: 3;
+      padding: 7px 11px;
+      border-radius: 999px;
+      color: #fff;
+      background: rgba(0, 0, 0, .46);
+      font-size: 12px;
+      font-weight: 900;
+      backdrop-filter: blur(12px);
+    }
+
+    main {
+      overflow: clip;
+    }
+
+    section {
+      padding: clamp(58px, 9vw, 112px) 0;
+    }
+
+    .wrap {
+      width: min(1120px, calc(100% - 36px));
+      margin: 0 auto;
+    }
+
+    .section-head {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 30px;
+      max-width: 760px;
+    }
+
+    .section-kicker {
+      color: var(--red);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(28px, 4.2vw, 52px);
+      line-height: 1.14;
+      letter-spacing: 0;
+      text-wrap: balance;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .proof-strip {
+      position: relative;
+      z-index: 3;
+      margin-top: -28px;
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .proof {
+      min-height: 120px;
+      padding: 20px;
+      border-right: 1px solid var(--line);
+    }
+
+    .proof:last-child { border-right: 0; }
+
+    .proof strong {
+      display: block;
+      font-size: 24px;
+      line-height: 1.2;
+      color: var(--red);
+    }
+
+    .proof span {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: clamp(28px, 5vw, 70px);
+      align-items: center;
+    }
+
+    .media-stack {
+      display: grid;
+      grid-template-columns: 1fr .72fr;
+      gap: 14px;
+      align-items: end;
+    }
+
+    .media-stack img {
+      width: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+
+    .media-stack img:first-child {
+      aspect-ratio: 4 / 5;
+    }
+
+    .media-stack img:last-child {
+      aspect-ratio: 1;
+      margin-bottom: 42px;
+    }
+
+    .copy-block {
+      display: grid;
+      gap: 22px;
+    }
+
+    .copy-block p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 12px;
+      margin: 8px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .feature-list li {
+      display: grid;
+      grid-template-columns: 26px 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      font-weight: 800;
+    }
+
+    .feature-list li::before {
+      content: "";
+      width: 20px;
+      height: 20px;
+      margin-top: 4px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, #fff 0 18%, var(--gold) 19% 100%);
+    }
+
+    .fun-band {
+      padding: 18px 0;
+      color: #fff;
+      background: linear-gradient(90deg, var(--red), var(--gold), var(--sea));
+      overflow: hidden;
+      font-weight: 900;
+    }
+
+    .fun-band-track {
+      width: max-content;
+      display: flex;
+      gap: 28px;
+      animation: marquee 24s linear infinite;
+      white-space: nowrap;
+      padding-left: 18px;
+    }
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    .bg-sand {
+      background: var(--sand);
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .product {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      min-height: 100%;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      overflow: hidden;
+      box-shadow: 0 14px 28px rgba(24, 32, 23, .08);
+      transform: rotate(-.3deg);
+    }
+
+    .product:nth-child(even) {
+      transform: rotate(.3deg);
+    }
+
+    .product img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      background: #f5f1e7;
+    }
+
+    .product-body {
+      padding: 18px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .product h3 {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.35;
+    }
+
+    .product p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .price {
+      color: var(--red);
+      font-size: 16px;
+      font-weight: 900;
+    }
+
+    .product-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      color: #fff;
+      background: var(--red);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .casual-gallery {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr .9fr;
+      grid-template-rows: 220px 220px;
+      gap: 14px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .gallery-item img,
+    .gallery-item video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .gallery-item.large {
+      grid-row: span 2;
+    }
+
+    .gallery-item.wide {
+      grid-column: span 2;
+    }
+
+    .gallery-label {
+      position: absolute;
+      left: 14px;
+      bottom: 14px;
+      z-index: 2;
+      padding: 7px 12px;
+      border-radius: 999px;
+      color: #fff;
+      background: rgba(24, 32, 23, .72);
+      font-size: 13px;
+      font-weight: 900;
+      backdrop-filter: blur(10px);
+    }
+
+    .gallery-item::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, .4));
+    }
+
+    .story {
+      color: #fff;
+      background:
+        linear-gradient(90deg, rgba(8, 61, 69, .94), rgba(8, 61, 69, .76)),
+        url("assets/kombu-drying.jpg") center / cover;
+    }
+
+    .story .section-kicker,
+    .story .section-head p {
+      color: rgba(255, 255, 255, .78);
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .story-card {
+      min-height: 210px;
+      padding: 22px;
+      border: 1px solid rgba(255, 255, 255, .18);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .1);
+      backdrop-filter: blur(14px);
+    }
+
+    .story-card span {
+      display: inline-grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      margin-bottom: 18px;
+      background: var(--gold);
+      color: #fff;
+      font-weight: 900;
+    }
+
+    .story-card h3 {
+      margin: 0 0 10px;
+      font-size: 21px;
+    }
+
+    .story-card p {
+      margin: 0;
+      color: rgba(255, 255, 255, .78);
+      font-weight: 700;
+    }
+
+    .use-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .use {
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 20px;
+      border-radius: 8px;
+      color: #fff;
+      overflow: hidden;
+      position: relative;
+      background: var(--sea-deep);
+    }
+
+    .use::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, .62));
+    }
+
+    .use:nth-child(1) { background: linear-gradient(135deg, #6b3a1f, #d6a158); }
+    .use:nth-child(2) { background: linear-gradient(135deg, #082f36, #0f695f); }
+    .use:nth-child(3) { background: linear-gradient(135deg, #273b20, #c89039); }
+
+    .use h3,
+    .use p {
+      position: relative;
+      margin: 0;
+    }
+
+    .use h3 {
+      font-size: 24px;
+      line-height: 1.2;
+    }
+
+    .use p {
+      margin-top: 8px;
+      color: rgba(255, 255, 255, .82);
+      font-weight: 800;
+    }
+
+    .media-feature {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: clamp(24px, 5vw, 56px);
+      align-items: center;
+    }
+
+    .media-screen {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: #111;
+      box-shadow: var(--shadow);
+    }
+
+    .media-screen img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+
+    .media-tag {
+      position: absolute;
+      left: 16px;
+      bottom: 16px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      color: #fff;
+      background: rgba(167, 58, 36, .92);
+      font-size: 13px;
+      font-weight: 900;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, .24);
+    }
+
+    .media-copy {
+      display: grid;
+      gap: 16px;
+    }
+
+    .media-copy p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .media-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .cta {
+      padding: 0 0 clamp(58px, 9vw, 112px);
+      background: var(--paper);
+    }
+
+    .cta-box {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 28px;
+      align-items: center;
+      padding: clamp(28px, 5vw, 56px);
+      border-radius: 8px;
+      color: #fff;
+      background:
+        linear-gradient(135deg, rgba(8, 61, 69, .96), rgba(15, 105, 95, .9)),
+        url("assets/hero-sea.jpg") center / cover;
+      box-shadow: var(--shadow);
+    }
+
+    .cta h2 {
+      font-size: clamp(30px, 5vw, 58px);
+    }
+
+    .cta p {
+      margin: 16px 0 0;
+      color: rgba(255, 255, 255, .82);
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .cta-actions {
+      display: grid;
+      gap: 12px;
+    }
+
+    .cta-actions .button {
+      width: 100%;
+    }
+
+    footer {
+      padding: 28px 18px;
+      text-align: center;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .sticky-buy {
+      position: fixed;
+      left: 50%;
+      bottom: 16px;
+      z-index: 30;
+      transform: translateX(-50%);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: min(420px, calc(100% - 32px));
+      min-height: 52px;
+      padding: 12px 20px;
+      border-radius: 999px;
+      color: #fff;
+      background: var(--red);
+      box-shadow: 0 18px 42px rgba(91, 25, 16, .28);
+      text-decoration: none;
+      font-weight: 900;
+    }
+
+    @media (max-width: 900px) {
+      .nav a:not(:last-child) { display: none; }
+
+      .hero-inner,
+      .split,
+      .cta-box,
+      .media-feature {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-inner {
+        padding-top: 96px;
+        padding-bottom: 34px;
+        gap: 24px;
+      }
+
+      .video-stage {
+        aspect-ratio: 16 / 7;
+      }
+
+      .proof-grid,
+      .product-grid,
+      .story-grid,
+      .use-grid,
+      .casual-gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .casual-gallery {
+        grid-template-rows: repeat(3, 220px);
+      }
+
+      .gallery-item.large,
+      .gallery-item.wide {
+        grid-column: auto;
+        grid-row: auto;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .site-header {
+        padding: 14px 18px;
+      }
+
+      .brand {
+        font-size: 14px;
+      }
+
+      .hero-actions {
+        display: grid;
+        margin-top: 20px;
+      }
+
+      h1 {
+        margin: 16px 0 12px;
+        font-size: clamp(38px, 12vw, 48px);
+      }
+
+      .lead {
+        font-size: 16px;
+        line-height: 1.65;
+      }
+
+      .video-caption {
+        padding: 10px 12px;
+        font-size: 12px;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .proof-grid,
+      .product-grid,
+      .story-grid,
+      .use-grid,
+      .media-stack,
+      .casual-gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .casual-gallery {
+        grid-template-rows: repeat(5, 220px);
+      }
+
+      .media-stack img:last-child {
+        margin-bottom: 0;
+      }
+
+      .proof {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .proof:last-child {
+        border-bottom: 0;
+      }
+    }
+
+    @media (min-width: 900px) {
+      .sticky-buy {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header" aria-label="ページ上部">
+    <div class="brand">
+      荒磯丸 あらいそまる
+      <small>磯貝嘉市商店 | 新ひだか町</small>
+    </div>
+    <nav class="nav" aria-label="ページ内ナビゲーション">
+      <a href="#about">魅力</a>
+      <a href="#lineup">商品</a>
+      <a href="#story">作り手</a>
+      <a href="#buy">今すぐ購入</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <span class="eyebrow">北海道・新ひだか町の昆布屋から</span>
+          <h1>ひと口で、海の旨み。日高昆布豚まん。</h1>
+          <p class="lead">昆布屋がつくる「荒磯丸 あらいそまる」。ふっくら生地に、日高昆布の旨みをぎゅっと。小腹がすいた夜にも、北海道らしい手土産にも。</p>
+          <div class="hero-actions">
+            <a class="button primary" href="https://www.kaichi-shoten.com/item/030/">あらいそまるを購入する</a>
+            <a class="button secondary" href="#lineup">味を選ぶ</a>
+          </div>
+        </div>
+        <aside class="video-panel" aria-label="動画エリア">
+          <div class="video-stage">
+            <video controls playsinline poster="assets/araisomaru-lp-hero-poster.jpg">
+              <source src="assets/araisomaru-lp-hero.mp4" type="video/mp4">
+            </video>
+            <span class="video-note">音声ありで再生できます</span>
+            <div class="video-badge">
+              <strong>海から届く、昆布屋の豚まん。</strong>
+              <span>日高昆布豚まん 荒磯丸</span>
+            </div>
+          </div>
+          <div class="video-caption">
+            <span>昆布漁 + 物産展</span>
+            <span>再生ボタンで音声あり</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="proof-strip">
+      <div class="wrap">
+        <div class="proof-grid" aria-label="商品ポイント">
+          <div class="proof">
+            <strong>520円</strong>
+            <span>まずは1個から試しやすい</span>
+          </div>
+          <div class="proof">
+            <strong>4種</strong>
+            <span>辛い・チーズ・甘いも選べる</span>
+          </div>
+          <div class="proof">
+            <strong>日高昆布</strong>
+            <span>昆布屋ならではの旨み</span>
+          </div>
+          <div class="proof">
+            <strong>公式通販</strong>
+            <span>気になったらそのまま購入へ</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fun-band" aria-label="あらいそまるの楽しみ方">
+      <div class="fun-band-track">
+        <span>あつあつで食べたい</span>
+        <span>北海道みやげにちょうどいい</span>
+        <span>今日はどの色にする？</span>
+        <span>昆布屋さんの豚まん</span>
+        <span>家族で食べ比べ</span>
+        <span>あつあつで食べたい</span>
+        <span>北海道みやげにちょうどいい</span>
+        <span>今日はどの色にする？</span>
+        <span>昆布屋さんの豚まん</span>
+        <span>家族で食べ比べ</span>
+      </div>
+    </div>
+
+    <section id="about">
+      <div class="wrap split">
+        <div class="media-stack">
+          <img src="assets/product-araisomaru-black.jpg" alt="日高昆布豚まん あらいそまるの商品写真">
+          <img src="assets/tasting-scene.jpg" alt="物産展で荒磯丸を手に取る様子">
+        </div>
+        <div class="copy-block">
+          <div class="section-head">
+            <span class="section-kicker">WHY ARAISOMARU</span>
+            <h2>肉まんじゃない。昆布屋の、日高昆布豚まん。</h2>
+            <p>北海道の海で育つ昆布を知り尽くした磯貝嘉市商店から。いつもの豚まんに、昆布の旨みとご当地感を足したら、ちょっと特別な一個になりました。</p>
+          </div>
+          <ul class="feature-list">
+            <li>小腹がすいたときに、しっかり満足できるあたたかい一品。</li>
+            <li>北海道らしさが伝わるから、自分用にも手土産にも選びやすい。</li>
+            <li>あらいそまる、からいそまる、あまいそまる。気分で選べる楽しさ。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-sand" id="lineup">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="section-kicker">LINEUP</span>
+          <h2>今日はどれにする？まずは王道「あらいそまる」。</h2>
+          <p>迷ったら、まずは税込520円の「あらいそまる」。辛いもの好き、チーズ好き、甘いもの派にはシリーズ買いもおすすめです。</p>
+        </div>
+        <div class="product-grid">
+          <article class="product">
+            <img src="assets/product-araisomaru-black.jpg" alt="日高昆布豚まん あらいそまる">
+            <div class="product-body">
+              <h3>日高昆布豚まん あらいそまる</h3>
+              <p>はじめてならこれ。日高昆布豚まんの王道です。</p>
+              <span class="price">税込 520円</span>
+              <a class="product-link" href="https://www.kaichi-shoten.com/item/030/">購入する</a>
+            </div>
+          </article>
+          <article class="product">
+            <img src="assets/product-karaisomaru-yellow.jpg" alt="日高昆布豚まん からいそまる">
+            <div class="product-body">
+              <h3>日高昆布豚まん からいそまる</h3>
+              <p>ピリッとした味が好きな方へ。食べ比べにも。</p>
+              <span class="price">税込 550円</span>
+              <a class="product-link" href="https://www.kaichi-shoten.com/item/031/">購入する</a>
+            </div>
+          </article>
+          <article class="product">
+            <img src="assets/product-karaiso-cheese-white.jpg" alt="日高昆布豚まん からいそまる チーズ入り">
+            <div class="product-body">
+              <h3>からいそまる チーズ入り</h3>
+              <p>辛さにチーズの満足感。濃いめが食べたい日に。</p>
+              <span class="price">税込 600円</span>
+              <a class="product-link" href="https://www.kaichi-shoten.com/item/034/">購入する</a>
+            </div>
+          </article>
+          <article class="product">
+            <img src="assets/product-amaisomaru-pink.jpg" alt="あまいそまる">
+            <div class="product-body">
+              <h3>あまいそまる</h3>
+              <p>甘いもの派はこちら。家族で選ぶ楽しさも。</p>
+              <span class="price">税込 410円</span>
+              <a class="product-link" href="https://www.kaichi-shoten.com/item/032/">購入する</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <span class="section-kicker">SNAP</span>
+          <h2>海も、売り場も、まるごとおいしい。</h2>
+          <p>昆布が育つ海、干す手仕事、物産展のにぎわい。あらいそまるの背景まで見えると、ひと口がちょっと楽しくなります。</p>
+        </div>
+        <div class="casual-gallery">
+          <figure class="gallery-item large">
+            <img src="assets/kombu-drying.jpg" alt="海辺で昆布を干す様子">
+            <figcaption class="gallery-label">昆布を干す朝</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="assets/product-araisomaru-black.jpg" alt="黒色のあらいそまる">
+            <figcaption class="gallery-label">黒のあらいそまる</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="assets/product-karaisomaru-yellow.jpg" alt="黄色のからいそまる">
+            <figcaption class="gallery-label">黄色のからいそまる</figcaption>
+          </figure>
+          <figure class="gallery-item wide">
+            <video controls playsinline poster="assets/previews/sancha-original.MOV.png">
+              <source src="assets/event-market-clip.mp4" type="video/mp4">
+            </video>
+            <figcaption class="gallery-label">物産展の雰囲気</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="story" id="story">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="section-kicker">STORY</span>
+          <h2>北海道の太平洋沖で育った昆布を、もっと身近に。</h2>
+          <p>磯貝嘉市商店は、漁期の早い時期に採れる良質な天然走り昆布を、一枚一枚丹念に加工して届ける新ひだか町の昆布屋です。</p>
+        </div>
+        <div class="story-grid">
+          <article class="story-card">
+            <span>1</span>
+            <h3>海のあるおいしさ</h3>
+            <p>日高三石昆布の産地として知られる北海道・新ひだか町から届く、ご当地感のある味です。</p>
+          </article>
+          <article class="story-card">
+            <span>2</span>
+            <h3>昆布屋の発想</h3>
+            <p>昆布をだしだけで終わらせない。豚まんとして楽しめる、ちょっと意外でうれしい一品です。</p>
+          </article>
+          <article class="story-card">
+            <span>3</span>
+            <h3>贈りたくなる</h3>
+            <p>北海道らしさが伝わるから、離れて暮らす家族や友人へのちょっとした贈り物にも。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <span class="section-kicker">SCENE</span>
+          <h2>家にあるとうれしい、北海道のごちそう。</h2>
+          <p>朝ごはん、夜食、休日のお昼、家族での食べ比べ。食べたいタイミングが来たとき、買っておいてよかったと思える一個です。</p>
+        </div>
+        <div class="use-grid">
+          <article class="use">
+            <h3>忙しい日の満足ごはんに。</h3>
+            <p>あたためて、さっと食べたいときに</p>
+          </article>
+          <article class="use">
+            <h3>北海道らしい手土産に。</h3>
+            <p>ご当地感のある贈り物として</p>
+          </article>
+          <article class="use">
+            <h3>食べ比べセットで。</h3>
+            <p>あらいそまる、からいそまる、あまいそまる</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-sand">
+      <div class="wrap media-feature">
+        <div class="media-screen">
+          <img src="assets/htb-broadcast-poster.jpg" alt="TV番組で荒磯丸が紹介された場面">
+          <span class="media-tag">TVで紹介</span>
+        </div>
+        <div class="media-copy">
+          <div class="section-head">
+            <span class="section-kicker">MEDIA</span>
+            <h2>北海道の特産品として、TV番組でも紹介。</h2>
+            <p>新ひだか町のおいしい特産品として取り上げられた荒磯丸。YouTubeでは1:40ごろから磯貝嘉市商店の紹介をご覧いただけます。</p>
+          </div>
+          <div class="media-actions">
+            <a class="button primary" href="https://www.kaichi-shoten.com/item/030/">あらいそまるを購入する</a>
+            <a class="button outline" href="https://www.youtube.com/watch?v=2Cxcx9MPSTg&t=100s" target="_blank" rel="noopener">YouTubeで紹介を見る</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="buy">
+      <div class="wrap">
+        <div class="cta-box">
+          <div>
+            <h2>まずは王道の「あらいそまる」から。</h2>
+            <p>海の旨みを包んだ日高昆布豚まん。気になった今が、いちばんおいしいタイミングです。</p>
+          </div>
+          <div class="cta-actions">
+            <a class="button primary" href="https://www.kaichi-shoten.com/item/030/">あらいそまるを購入する</a>
+            <a class="button secondary" href="https://www.kaichi-shoten.com/category/17/">荒磯丸シリーズを見る</a>
+            <a class="button secondary" href="https://www.kaichi-shoten.com/">磯貝嘉市商店を見る</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    商品情報・画像出典: 有限会社磯貝嘉市商店 公式サイト
+  </footer>
+  <a class="sticky-buy" href="https://www.kaichi-shoten.com/item/030/">あらいそまるを購入する</a>
+</body>
+</html>

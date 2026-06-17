@@ -644,6 +644,97 @@
       background: linear-gradient(180deg, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, .4));
     }
 
+    .reaction-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .reaction-card,
+    .easy-card {
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .reaction-card {
+      padding: clamp(22px, 4vw, 34px);
+    }
+
+    .reaction-card h3,
+    .easy-card h3 {
+      margin: 0;
+      color: var(--ink);
+      font-size: clamp(24px, 3.2vw, 38px);
+      line-height: 1.15;
+    }
+
+    .reaction-card p {
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 16px;
+      font-weight: 800;
+    }
+
+    .reaction-list {
+      display: grid;
+      gap: 10px;
+      margin: 22px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .reaction-list li {
+      padding: 13px 14px;
+      border-radius: 8px;
+      background: var(--sand);
+      color: var(--ink);
+      font-weight: 900;
+    }
+
+    .easy-card {
+      overflow: hidden;
+    }
+
+    .easy-card img {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      display: block;
+    }
+
+    .easy-body {
+      padding: 22px;
+    }
+
+    .easy-steps {
+      display: grid;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .easy-step {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 10px;
+      align-items: start;
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .easy-step span {
+      display: inline-grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      color: #fff;
+      background: var(--red);
+      font-weight: 900;
+    }
+
     .story {
       color: #fff;
       background:
@@ -916,6 +1007,7 @@
 
       .proof-grid,
       .product-grid,
+      .reaction-grid,
       .story-grid,
       .use-grid,
       .casual-gallery {
@@ -971,6 +1063,7 @@
 
       .proof-grid,
       .product-grid,
+      .reaction-grid,
       .story-grid,
       .use-grid,
       .media-stack,
@@ -1218,6 +1311,38 @@
             </video>
             <figcaption class="gallery-label">昆布漁の動画</figcaption>
           </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-sand">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="section-kicker">REAL VOICE</span>
+          <h2>物産展で、思わず手に取られる存在感。</h2>
+          <p>催事の売り場でも目を惹く荒磯丸。気になって買って、イベント中にもう一度買いに来る方もいます。</p>
+        </div>
+        <div class="reaction-grid">
+          <article class="reaction-card">
+            <h3>「また食べたい」が、売り場で生まれています。</h3>
+            <p>北海道物産展でも目を惹く黒い豚まん。昆布の旨みが入っているのに食べやすく、家族で楽しみやすい一品です。</p>
+            <ul class="reaction-list">
+              <li>物産展で人気。催事で手に取られています。</li>
+              <li>イベント中にリピート買いされる方も多数。</li>
+              <li>昆布が苦手だったお子さんでも、食べられるようになったという声も。</li>
+            </ul>
+          </article>
+          <article class="easy-card">
+            <img src="assets/product-araisomaru-black.jpg" alt="黒色のあらいそまる">
+            <div class="easy-body">
+              <h3>冷凍で保管。食べたい時にレンジでチン。</h3>
+              <div class="easy-steps" aria-label="食べ方">
+                <div class="easy-step"><span>1</span><p>冷凍状態で保管しておけます。</p></div>
+                <div class="easy-step"><span>2</span><p>食べたいタイミングで取り出します。</p></div>
+                <div class="easy-step"><span>3</span><p>レンジであたためて、ふかふかを楽しめます。</p></div>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>

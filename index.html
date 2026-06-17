@@ -158,10 +158,26 @@
     h1 {
       margin: 22px 0 18px;
       max-width: 760px;
-      font-size: clamp(44px, 8vw, 98px);
-      line-height: .98;
+      font-size: 72px;
+      line-height: 1.02;
       letter-spacing: 0;
-      text-wrap: balance;
+      text-wrap: auto;
+      word-break: keep-all;
+    }
+
+    .title-line {
+      display: block;
+      white-space: nowrap;
+    }
+
+    .title-main {
+      font-size: 1em;
+    }
+
+    .title-sub {
+      margin-top: 4px;
+      font-size: .72em;
+      letter-spacing: 0;
     }
 
     .lead {
@@ -548,7 +564,7 @@
     .casual-gallery {
       display: grid;
       grid-template-columns: 1fr 1.1fr .9fr;
-      grid-template-rows: 220px 220px;
+      grid-template-rows: repeat(4, 210px);
       gap: 14px;
     }
 
@@ -574,6 +590,10 @@
 
     .gallery-item.wide {
       grid-column: span 2;
+    }
+
+    .gallery-item.tall {
+      grid-row: span 2;
     }
 
     .gallery-label {
@@ -704,12 +724,14 @@
     }
 
     .media-screen {
+      display: block;
       position: relative;
       overflow: hidden;
       border-radius: 8px;
       border: 1px solid var(--line);
       background: #111;
       box-shadow: var(--shadow);
+      text-decoration: none;
     }
 
     .media-screen img {
@@ -729,6 +751,31 @@
       font-size: 13px;
       font-weight: 900;
       box-shadow: 0 10px 24px rgba(0, 0, 0, .24);
+    }
+
+    .play-mark {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      display: grid;
+      place-items: center;
+      width: 66px;
+      height: 66px;
+      border-radius: 50%;
+      color: #fff;
+      background: rgba(167, 58, 36, .92);
+      box-shadow: 0 18px 38px rgba(0, 0, 0, .28);
+      transform: translate(-50%, -50%);
+    }
+
+    .play-mark::before {
+      content: "";
+      width: 0;
+      height: 0;
+      margin-left: 5px;
+      border-top: 13px solid transparent;
+      border-bottom: 13px solid transparent;
+      border-left: 20px solid #fff;
     }
 
     .media-copy {
@@ -876,7 +923,7 @@
 
       h1 {
         margin: 16px 0 12px;
-        font-size: clamp(38px, 12vw, 48px);
+        font-size: 42px;
       }
 
       .lead {
@@ -903,7 +950,7 @@
       }
 
       .casual-gallery {
-        grid-template-rows: repeat(5, 220px);
+        grid-template-rows: repeat(9, 220px);
       }
 
       .media-stack img:last-child {
@@ -917,6 +964,18 @@
 
       .proof:last-child {
         border-bottom: 0;
+      }
+    }
+
+    @media (max-width: 380px) {
+      h1 {
+        font-size: 36px;
+      }
+    }
+
+    @media (max-width: 340px) {
+      h1 {
+        font-size: 31px;
       }
     }
 
@@ -946,7 +1005,10 @@
       <div class="hero-inner">
         <div>
           <span class="eyebrow">北海道・新ひだか町の昆布屋から</span>
-          <h1>ふかふか、うまい。昆布屋さんの豚まん。</h1>
+          <h1>
+            <span class="title-line title-main">ふかふか、うまい。</span>
+            <span class="title-line title-sub">昆布屋さんの豚まん。</span>
+          </h1>
           <p class="lead">北海道・新ひだか町から届く「荒磯丸 あらいそまる」。小腹がすいた夜にも、休日のお昼にも、北海道らしい手土産にも。</p>
           <div class="hero-actions">
             <a class="button primary" href="https://www.kaichi-shoten.com/item/030/">あらいそまるを購入する</a>
@@ -955,7 +1017,7 @@
         </div>
         <aside class="video-panel" aria-label="動画エリア">
           <div class="video-stage">
-            <video controls playsinline poster="assets/araisomaru-lp-hero-poster.jpg">
+            <video controls playsinline preload="metadata" poster="assets/araisomaru-lp-hero-poster.jpg">
               <source src="assets/araisomaru-lp-hero.mp4" type="video/mp4">
             </video>
             <span class="video-note">音声ありで再生できます</span>
@@ -1088,22 +1150,44 @@
         </div>
         <div class="casual-gallery">
           <figure class="gallery-item large">
-            <img src="assets/kombu-drying.jpg" alt="海辺で昆布を干す様子">
+            <img src="assets/kombu-seaside-drying.jpg" alt="海辺で昆布を干す様子">
             <figcaption class="gallery-label">昆布を干す朝</figcaption>
+          </figure>
+          <figure class="gallery-item tall">
+            <img src="assets/kombu-harvest-portrait.jpg" alt="船の上で昆布を抱える漁の様子">
+            <figcaption class="gallery-label">海から揚がる昆布</figcaption>
           </figure>
           <figure class="gallery-item">
             <img src="assets/product-araisomaru-black.jpg" alt="黒色のあらいそまる">
             <figcaption class="gallery-label">黒のあらいそまる</figcaption>
           </figure>
           <figure class="gallery-item">
-            <img src="assets/product-karaisomaru-yellow.jpg" alt="黄色のからいそまる">
-            <figcaption class="gallery-label">黄色のからいそまる</figcaption>
+            <img src="assets/kombu-boat-sea.jpg" alt="昆布を積んだ船が海を進む様子">
+            <figcaption class="gallery-label">漁の現場から</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="assets/kombu-handwork.jpg" alt="昆布を手作業で整える様子">
+            <figcaption class="gallery-label">昆布屋の手仕事</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="assets/isogai-shop-front.jpg" alt="磯貝嘉市商店の店舗外観">
+            <figcaption class="gallery-label">新ひだか町のお店</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="assets/araisomaru-brand-banners.jpg" alt="あらいそまるのブランド幕">
+            <figcaption class="gallery-label">あらいそまるの目印</figcaption>
           </figure>
           <figure class="gallery-item wide">
-            <video controls playsinline poster="assets/previews/sancha-original.MOV.png">
+            <video controls playsinline preload="metadata" poster="assets/previews/sancha-original.MOV.png">
               <source src="assets/event-market-clip.mp4" type="video/mp4">
             </video>
             <figcaption class="gallery-label">物産展の雰囲気</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <video controls playsinline preload="metadata" poster="assets/kombu-harvest-clip-poster.jpg">
+              <source src="assets/kombu-harvest-clip.mp4" type="video/mp4">
+            </video>
+            <figcaption class="gallery-label">昆布漁の動画</figcaption>
           </figure>
         </div>
       </div>
@@ -1162,15 +1246,16 @@
 
     <section class="bg-sand">
       <div class="wrap media-feature">
-        <div class="media-screen">
-          <img src="assets/htb-broadcast-poster.jpg" alt="TV番組で荒磯丸が紹介された場面">
-          <span class="media-tag">TVで紹介</span>
-        </div>
+        <a class="media-screen" href="https://www.youtube.com/watch?v=2Cxcx9MPSTg&t=100s" target="_blank" rel="noopener" aria-label="YouTubeで磯貝嘉市商店の紹介を見る">
+          <img src="assets/kombu-harvest-boat.jpg" alt="昆布漁の船上で昆布を扱う様子">
+          <span class="play-mark" aria-hidden="true"></span>
+          <span class="media-tag">YouTube 1:40から</span>
+        </a>
         <div class="media-copy">
           <div class="section-head">
             <span class="section-kicker">MEDIA</span>
-            <h2>北海道の特産品として、TV番組でも紹介。</h2>
-            <p>新ひだか町のおいしい特産品として取り上げられた荒磯丸。YouTubeでは1:40ごろから磯貝嘉市商店の紹介をご覧いただけます。</p>
+            <h2>番組内でも、磯貝嘉市商店の昆布づくりを紹介。</h2>
+            <p>新ひだか町の魅力を紹介する動画の1:40ごろから、磯貝嘉市商店の昆布や荒磯丸につながる背景をご覧いただけます。</p>
           </div>
           <div class="media-actions">
             <a class="button primary" href="https://www.kaichi-shoten.com/item/030/">あらいそまるを購入する</a>

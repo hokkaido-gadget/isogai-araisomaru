@@ -564,7 +564,7 @@
     .casual-gallery {
       display: grid;
       grid-template-columns: 1fr 1.1fr .9fr;
-      grid-template-rows: repeat(4, 210px);
+      grid-template-rows: repeat(5, 210px);
       gap: 14px;
     }
 
@@ -580,8 +580,20 @@
     .gallery-item video {
       width: 100%;
       height: 100%;
-      object-fit: cover;
       display: block;
+    }
+
+    .gallery-item img {
+      object-fit: cover;
+    }
+
+    .gallery-item video {
+      object-fit: contain;
+      background: #101412;
+    }
+
+    .gallery-item.video-item {
+      background: #101412;
     }
 
     .gallery-item.large {
@@ -593,6 +605,15 @@
     }
 
     .gallery-item.tall {
+      grid-row: span 2;
+    }
+
+    .gallery-item.video-wide {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+
+    .gallery-item.video-tall {
       grid-row: span 2;
     }
 
@@ -608,6 +629,11 @@
       font-size: 13px;
       font-weight: 900;
       backdrop-filter: blur(10px);
+    }
+
+    .video-item .gallery-label {
+      top: 14px;
+      bottom: auto;
     }
 
     .gallery-item::after {
@@ -901,7 +927,10 @@
       }
 
       .gallery-item.large,
-      .gallery-item.wide {
+      .gallery-item.wide,
+      .gallery-item.tall,
+      .gallery-item.video-wide,
+      .gallery-item.video-tall {
         grid-column: auto;
         grid-row: auto;
       }
@@ -950,7 +979,7 @@
       }
 
       .casual-gallery {
-        grid-template-rows: repeat(9, 220px);
+        grid-template-rows: repeat(9, minmax(240px, auto));
       }
 
       .media-stack img:last-child {
@@ -1177,13 +1206,13 @@
             <img src="assets/araisomaru-brand-banners.jpg" alt="あらいそまるのブランド幕">
             <figcaption class="gallery-label">あらいそまるの目印</figcaption>
           </figure>
-          <figure class="gallery-item wide">
+          <figure class="gallery-item video-item video-wide">
             <video controls playsinline preload="metadata" poster="assets/previews/sancha-original.MOV.png">
               <source src="assets/event-market-clip.mp4" type="video/mp4">
             </video>
             <figcaption class="gallery-label">物産展の雰囲気</figcaption>
           </figure>
-          <figure class="gallery-item">
+          <figure class="gallery-item video-item video-tall">
             <video controls playsinline preload="metadata" poster="assets/kombu-harvest-clip-poster.jpg">
               <source src="assets/kombu-harvest-clip.mp4" type="video/mp4">
             </video>

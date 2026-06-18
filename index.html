@@ -923,6 +923,15 @@
       gap: 18px;
     }
 
+    .media-side-stack .media-card {
+      grid-template-columns: 42% 1fr;
+      grid-template-rows: auto;
+    }
+
+    .media-side-stack .media-embed {
+      min-height: 100%;
+    }
+
     .media-card {
       display: grid;
       grid-template-rows: auto 1fr;
@@ -992,9 +1001,9 @@
 
     .media-photo-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       gap: 18px;
-      margin-top: 22px;
+      margin-top: 24px;
     }
 
     .media-photo {
@@ -1208,6 +1217,30 @@
         grid-template-columns: 1fr;
       }
 
+      .media-side-stack .media-card {
+        grid-template-columns: 132px 1fr;
+      }
+
+      .media-side-stack .media-embed {
+        aspect-ratio: auto;
+      }
+
+      .media-side-stack .media-card-body {
+        padding: 12px;
+      }
+
+      .media-side-stack .media-card-body h3 {
+        font-size: 16px;
+      }
+
+      .media-side-stack .media-card-body p {
+        display: none;
+      }
+
+      .media-side-stack .media-actions {
+        display: none;
+      }
+
       .casual-gallery {
         grid-template-rows: repeat(9, minmax(240px, auto));
       }
@@ -1403,12 +1436,8 @@
         </div>
         <div class="media-photo-grid" aria-label="日高昆布商品の写真">
           <figure class="media-photo">
-            <img src="assets/morishima-event-1.jpg" alt="日高昆布や焼き昆布塩の商品写真">
-            <figcaption>日高昆布の恵み</figcaption>
-          </figure>
-          <figure class="media-photo">
             <img src="assets/morishima-event-2.jpg" alt="ざるに並ぶ日高昆布や関連商品の写真">
-            <figcaption>北海道展で伝えたい味</figcaption>
+            <figcaption>北海道展で伝えたい、日高昆布の恵み</figcaption>
           </figure>
         </div>
       </div>

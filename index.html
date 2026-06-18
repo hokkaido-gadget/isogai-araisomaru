@@ -990,6 +990,42 @@
       font-weight: 900;
     }
 
+    .media-photo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .media-photo {
+      position: relative;
+      overflow: hidden;
+      border: 3px solid var(--navy);
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 5px 5px 0 rgba(11, 39, 71, .9);
+    }
+
+    .media-photo img {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+    }
+
+    .media-photo figcaption {
+      position: absolute;
+      left: 14px;
+      bottom: 14px;
+      padding: 7px 11px;
+      border: 2px solid var(--navy);
+      border-radius: 999px;
+      color: var(--navy);
+      background: rgba(255, 212, 71, .94);
+      font-size: 13px;
+      font-weight: 900;
+      box-shadow: 3px 3px 0 rgba(11, 39, 71, .82);
+    }
+
     .media-actions {
       display: flex;
       flex-wrap: wrap;
@@ -1166,6 +1202,7 @@
       .reaction-grid,
       .story-grid,
       .use-grid,
+      .media-photo-grid,
       .media-stack,
       .casual-gallery {
         grid-template-columns: 1fr;
@@ -1330,7 +1367,7 @@
         <div class="media-grid">
           <article class="media-card featured">
             <div class="media-embed">
-              <iframe src="https://www.youtube.com/embed/AYjUVI8iTp8?start=481" title="読売テレビによる磯貝嘉市商店の紹介動画" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              <iframe src="https://www.youtube.com/embed/AYjUVI8iTp8?start=481" title="読売テレビによる磯貝嘉市商店の紹介動画" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
             <div class="media-card-body">
               <span class="media-tag">読売テレビ 8:01から</span>
@@ -1341,7 +1378,7 @@
           <div class="media-side-stack">
             <article class="media-card">
               <div class="media-embed">
-                <iframe src="https://www.youtube.com/embed/2Cxcx9MPSTg?start=100" title="HTB番組内での磯貝嘉市商店の紹介動画" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/2Cxcx9MPSTg?start=100" title="HTB番組内での磯貝嘉市商店の紹介動画" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
               </div>
               <div class="media-card-body">
                 <span class="media-tag">HTB 1:40から</span>
@@ -1351,7 +1388,7 @@
             </article>
             <article class="media-card">
               <div class="media-embed">
-                <iframe src="https://www.youtube.com/embed/gL_VZ9bPFGk" title="あらいそまるが紹介されたYouTube動画" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/gL_VZ9bPFGk" title="あらいそまるが紹介されたYouTube動画" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
               </div>
               <div class="media-card-body">
                 <span class="media-tag">YouTubeでも紹介</span>
@@ -1363,6 +1400,16 @@
               </div>
             </article>
           </div>
+        </div>
+        <div class="media-photo-grid" aria-label="日高昆布商品の写真">
+          <figure class="media-photo">
+            <img src="assets/morishima-event-1.jpg" alt="日高昆布や焼き昆布塩の商品写真">
+            <figcaption>日高昆布の恵み</figcaption>
+          </figure>
+          <figure class="media-photo">
+            <img src="assets/morishima-event-2.jpg" alt="ざるに並ぶ日高昆布や関連商品の写真">
+            <figcaption>北海道展で伝えたい味</figcaption>
+          </figure>
         </div>
       </div>
     </section>

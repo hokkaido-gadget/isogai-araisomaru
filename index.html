@@ -902,6 +902,22 @@
       align-items: center;
     }
 
+    .media-section .section-head {
+      max-width: 860px;
+      margin-bottom: 28px;
+    }
+
+    .media-section .section-head h2 {
+      max-width: 840px;
+    }
+
+    .media-grid {
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
     .media-screen {
       display: block;
       position: relative;
@@ -913,10 +929,20 @@
       text-decoration: none;
     }
 
+    .media-screen.featured {
+      min-height: 100%;
+      border-color: var(--gold);
+      box-shadow: 8px 8px 0 rgba(11, 39, 71, .94);
+    }
+
     .media-screen img {
       width: 100%;
       aspect-ratio: 16 / 9;
       object-fit: cover;
+    }
+
+    .media-screen.featured img {
+      aspect-ratio: 16 / 10;
     }
 
     .media-tag {
@@ -930,6 +956,29 @@
       font-size: 13px;
       font-weight: 900;
       box-shadow: 0 10px 24px rgba(0, 0, 0, .24);
+    }
+
+    .media-callout {
+      position: absolute;
+      inset: auto 18px 18px 18px;
+      display: grid;
+      gap: 4px;
+      padding: 14px 16px;
+      border: 2px solid var(--navy);
+      border-radius: 8px;
+      color: var(--navy);
+      background: rgba(255, 212, 71, .94);
+      box-shadow: 4px 4px 0 rgba(11, 39, 71, .86);
+      font-weight: 900;
+    }
+
+    .media-callout strong {
+      font-size: clamp(20px, 3vw, 32px);
+      line-height: 1.18;
+    }
+
+    .media-callout span {
+      font-size: 13px;
     }
 
     .play-mark {
@@ -1053,7 +1102,8 @@
       .hero-inner,
       .split,
       .cta-box,
-      .media-feature {
+      .media-feature,
+      .media-grid {
         grid-template-columns: 1fr;
       }
 
@@ -1125,6 +1175,11 @@
       .video-caption {
         padding: 10px 12px;
         font-size: 12px;
+      }
+
+      .media-callout {
+        inset: auto 12px 12px 12px;
+        padding: 10px 12px;
       }
 
       .button {
@@ -1482,22 +1537,34 @@
       </div>
     </section>
 
-    <section class="bg-sand">
-      <div class="wrap media-feature">
-        <a class="media-screen" href="https://www.youtube.com/watch?v=2Cxcx9MPSTg&t=100s" target="_blank" rel="noopener" aria-label="YouTubeで磯貝嘉市商店の紹介を見る">
-          <img src="assets/kombu-harvest-boat.jpg" alt="昆布漁の船上で昆布を扱う様子">
-          <span class="play-mark" aria-hidden="true"></span>
-          <span class="media-tag">YouTube 1:40から</span>
-        </a>
-        <div class="media-copy">
-          <div class="section-head">
-            <span class="section-kicker">MEDIA</span>
-            <h2>HTB番組内でも、磯貝嘉市商店の昆布づくりを紹介。</h2>
-            <p>新ひだか町の魅力を紹介する動画の1:40ごろから、磯貝嘉市商店の昆布や荒磯丸につながる背景をご覧いただけます。</p>
-          </div>
-          <div class="media-actions">
-            <a class="button primary" href="https://www.kaichi-shoten.com/item/030/">あらいそまるを購入する</a>
-            <a class="button outline" href="https://www.youtube.com/watch?v=2Cxcx9MPSTg&t=100s" target="_blank" rel="noopener">YouTubeで紹介を見る</a>
+    <section class="bg-sand media-section">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="section-kicker">MEDIA</span>
+          <h2>読売テレビの取材で紹介。ミヤネ屋でも放送された注目の一品。</h2>
+          <p>近鉄百貨店での大北海道展出展に際して、読売テレビが磯貝嘉市商店を取材。同内容はミヤネ屋でも放送され、あらいそまるの背景や昆布づくりの想いが紹介されました。</p>
+        </div>
+        <div class="media-grid">
+          <a class="media-screen featured" href="https://www.youtube.com/watch?v=AYjUVI8iTp8&t=481s" target="_blank" rel="noopener" aria-label="読売テレビのYouTubeで磯貝嘉市商店の紹介を見る">
+            <img src="https://img.youtube.com/vi/AYjUVI8iTp8/hqdefault.jpg" alt="読売テレビの番組で紹介された磯貝嘉市商店の動画サムネイル">
+            <span class="play-mark" aria-hidden="true"></span>
+            <span class="media-tag">読売テレビ 8:01から</span>
+            <span class="media-callout">
+              <strong>近鉄百貨店 大北海道展で取材</strong>
+              <span>ミヤネ屋でも同内容が放送されました</span>
+            </span>
+          </a>
+          <div class="media-copy">
+            <a class="media-screen" href="https://www.youtube.com/watch?v=2Cxcx9MPSTg&t=100s" target="_blank" rel="noopener" aria-label="HTB番組内で磯貝嘉市商店の紹介を見る">
+              <img src="https://img.youtube.com/vi/2Cxcx9MPSTg/hqdefault.jpg" alt="HTB番組内で紹介された磯貝嘉市商店の動画サムネイル">
+              <span class="play-mark" aria-hidden="true"></span>
+              <span class="media-tag">HTB 1:40から</span>
+            </a>
+            <p>HTB番組内でも、磯貝嘉市商店の昆布づくりを紹介。新ひだか町の海から、あらいそまるにつながる背景をご覧いただけます。</p>
+            <div class="media-actions">
+              <a class="button primary" href="https://www.kaichi-shoten.com/item/030/">あらいそまるを購入する</a>
+              <a class="button outline" href="https://www.youtube.com/watch?v=AYjUVI8iTp8&t=481s" target="_blank" rel="noopener">読売テレビの紹介を見る</a>
+            </div>
           </div>
         </div>
       </div>
